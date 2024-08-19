@@ -5,7 +5,8 @@
   "description": "test driven developement using jest",
   "main": "BattleShip.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "watch":"jest --watch a"
   },
   "keywords": [],
   "author": "",
