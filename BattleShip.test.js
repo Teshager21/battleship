@@ -5,11 +5,12 @@ it('should return a received_hit of one',()=>{
     expect(battleShip.recieved_hit).toBe(1);
 })
 
-it(('it should return sunk-true',()=>{
+it('it should return sunk-true',()=>{
     const battleShip = new BattleShip(1);
     battleShip.hit();
-    expect(battleShip.isSunk()).toBe(true);
-}))
+    battleShip.isSunk();
+    expect(battleShip.sunk).toBe(true);
+})
 
 
 
