@@ -7,6 +7,7 @@ class BattleShip{
 location=[];
 hit(){
     this.received_hit++;
+    this.isSunk();
 }
 isSunk(){
     this.sunk= (this.received_hit===this.length);

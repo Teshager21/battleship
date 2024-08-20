@@ -2,7 +2,7 @@ import BattleShip from "./BattleShip.js"
 
 export default class GameBoard{
 constructor(){
-  this.ships=[];
+  this.fleet=[];
   this.occupied={};
   this.missed=[];
   this.hit=[];
@@ -10,7 +10,7 @@ constructor(){
 
 generateShips(){
 for(let i=1;i<=5;i++){
-   this.ships.push(new BattleShip(i));
+   this.fleet.push(new BattleShip(i));
 }
 }
 
@@ -44,7 +44,7 @@ const occupyLocation=(location,ship,alignment)=>{
         }
     }
 }
- for(const ship of this.ships){
+ for(const ship of this.fleet){
     
      let alignment='';
     while(!ship.location.length){
@@ -66,7 +66,18 @@ receiveAttack(location){
 
 }
 
+fleetSunk(){
+  for(const ship of this.fleet){
+    if(!ship.isSunk) return false;
+  }
+  return true;
 }
+
+}
+
+
+
+
 const gameBoard= new GameBoard();
 gameBoard.placeShips();
 
