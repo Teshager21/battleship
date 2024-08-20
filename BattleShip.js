@@ -1,15 +1,15 @@
 class BattleShip{
     constructor(length){
         this.length=length;
-        this.recieved_hit=0;
+        this.received_hit=0;
         this.sunk=false; 
     }
 location=[];
 hit(){
-    this.recieved_hit++;
+    this.received_hit++;
 }
 isSunk(){
-    this.sunk= (this.recieved_hit===this.length);
+    this.sunk= (this.received_hit===this.length);
 }
 }
 

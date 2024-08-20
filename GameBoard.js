@@ -6,7 +6,6 @@ constructor(){
   this.occupied={};
   this.missed=[];
   this.hit=[];
-  this.generateShips();
 }
 
 generateShips(){
@@ -16,7 +15,7 @@ for(let i=1;i<=5;i++){
 }
 
 placeShips(){
-
+this.generateShips();
 const canAccomodateShip=(location,ship,alignment)=>{
 if(alignment==="horizontal") return parseInt(location)+ship.length-1<100 && parseInt(location)+ship.length-1>0;
 if(alignment==="vertical") return parseInt(location)+10*ship.length-1<100 && parseInt(location)+10*ship.length-1>0;
@@ -73,6 +72,8 @@ gameBoard.placeShips();
 
 
 gameBoard.receiveAttack(Object.keys(gameBoard.occupied)[0])
-console.log(gameBoard.occupied)
-console.log('missed',gameBoard.missed)
-console.log('hit',gameBoard.hit);
+// console.log(gameBoard.occupied)
+// console.log('missed',gameBoard.missed)
+// console.log('hit',gameBoard.hit);
+// console.log('values',Object.values(gameBoard.occupied)[0].received_hit
+// );

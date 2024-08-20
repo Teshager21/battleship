@@ -2,7 +2,7 @@ import BattleShip from "./BattleShip";
 it('should return a received_hit of one',()=>{
     const battleShip= new BattleShip(3);
     battleShip.hit();
-    expect(battleShip.recieved_hit).toBe(1);
+    expect(battleShip.received_hit).toBe(1);
 })
 
 it('it should return sunk-true',()=>{
