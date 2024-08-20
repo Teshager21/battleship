@@ -67,7 +67,9 @@ receiveAttack(location){
 }
 
 isFleetSunk(){
-  for(const ship of this.fleet) if(!ship.sunk) return false;
+  for(const ship of this.fleet){
+     if(!ship.sunk) return false;
+    }
   return true;
 }
 
