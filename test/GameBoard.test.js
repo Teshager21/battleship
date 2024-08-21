@@ -1,4 +1,4 @@
-import GameBoard from "./GameBoard";
+import GameBoard from "../src/GameBoard";
 
 it('should return a hit of 1',()=>{
     const gameBoard= new GameBoard();

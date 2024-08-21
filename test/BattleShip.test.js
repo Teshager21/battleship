@@ -1,4 +1,4 @@
-import BattleShip from "./BattleShip";
+import BattleShip from "../src/BattleShip";
 it('should return a received_hit of one',()=>{
     const battleShip= new BattleShip(3);
     battleShip.hit();
