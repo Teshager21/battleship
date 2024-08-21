@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    background-color: orange;
+}
+
+body{
+    margin: 4rem;
+}
+
+.board{
+    border: 1px solid rgba(0,0,0,0.4);
+    height: 80vh;
+    width: 80vh;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(10,1fr);
+}
+
+.cell{
+    border: 1px solid rgba(0,0,0,0.4); 
+}
