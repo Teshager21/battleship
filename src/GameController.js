@@ -6,8 +6,10 @@ const Controller=()=>{
 
     const gameBoard1= new GameBoard();
     const gameBoard2= new GameBoard();
-    const player2 = new Player(gameBoard2);
-    const player1 = new Player(gameBoard1);
+    const player2 = new Player('Computer');
+    const player1 = new Player('You');
+    player1.gameBoard=gameBoard1;
+    player2.gameBoard=gameBoard2;
     
     player1.deployFleet();
     player2.deployFleet();
@@ -16,7 +18,7 @@ const Controller=()=>{
     let currentPlayer= player1;
     let opponent= player2;
     const switchTurn=()=>{
-        if(currentPlayer===player1) {
+        if(currentPlayer.id===player1.id) {
             currentPlayer=player2;
             opponent=player1;
         }else{
@@ -25,15 +27,22 @@ const Controller=()=>{
             }
     }
     const init=()=>{
-        currentPlayer.gameBoard.receiveAttack('20');
-        currentPlayer.gameBoard.receiveAttack('22');
-        console.log(gameBoard1.fleet);
-        view.display(gameBoard1,gameBoard2);
+        view.display(gameBoard2,gameBoard1);
     }
     const allocateFire=(location)=>{
+      console.log('allocating',location)
       opponent.gameBoard.receiveAttack(location);
-      view.display(gameBoard1,gameBoard2);
-      switchTurn();
+      view.display(currentPlayer.gameBoard,opponent.gameBoard);
+      console.log('before switching',currentPlayer);
+     switchTurn(); 
+     console.log('after switching',currentPlayer);
+     if(currentPlayer.id===player2.id){
+        const row= Math.floor(Math.random()*10)
+        const loc = `${(row>=1)?row:''}${Math.floor(Math.random()*10)}`;
+        console.log('location',loc)
+        subscription.subscribe('fire',loc);
+     }
+    
     }
     subscription.publish('fire',allocateFire)
 

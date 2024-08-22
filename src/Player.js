@@ -1,7 +1,11 @@
 export default class Player{
-    constructor(gameBoard){
-        this.gameBoard=gameBoard;
+    gameBoard;
+    constructor(name){
+        this.id=name;
 
+    }
+    set gameBoard(gameBoard){
+        this.gameBoard=gameBoard;
     }
     deployFleet(){
         this.gameBoard.placeShips();
