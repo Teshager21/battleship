@@ -32,6 +32,7 @@ const Controller=()=>{
     const allocateFire=(location)=>{
       opponent.gameBoard.receiveAttack(location);
       view.display(currentPlayer.gameBoard,opponent.gameBoard);
+      if(opponent.gameBoard.isFleetSunk()) subscription.subscribe('fleetSunk',opponent.id)
      switchTurn(); 
      if(currentPlayer.id===player2.id){
         const row= Math.floor(Math.random()*10)

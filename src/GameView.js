@@ -15,6 +15,15 @@ const View=(gameBoard)=>{
     board2.addEventListener('click',(e)=>handleFire(e));
 
     const handleFire=(e)=> subscription.subscribe('fire',e.target.getAttribute('id'));
+    const gameOver=(id)=>{
+        const dialog = document.querySelector("dialog");
+        dialog.showModal();
+        const closeButton = document.querySelector("dialog button");
+        closeButton.addEventListener("click", () => {
+          dialog.close();
+        });
+    }
+    subscription.publish('fleetSunk',gameOver)
     
     view.append(board1,board2);
    

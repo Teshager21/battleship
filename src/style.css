@@ -48,3 +48,47 @@ body{
     font-size: 1rem;
     font-weight: bold;
 }
+
+dialog{
+    height: 15rem;
+    width: 30rem;
+    margin:auto;
+    outline:none;
+    border:none;
+    border-radius: 0.5rem;
+}
+
+.dialog-container{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-container>button{
+    
+    align-self: flex-start;
+    /* justify-self: end; */
+    padding: 0.2rem;
+    outline: none;
+    background-color: none;
+    font-size: 1.2rem;
+    border:none;
+}
+
+#result{
+ font-size: 2rem;
+}
+
+::backdrop {
+    background-image: linear-gradient(
+      45deg,
+      magenta,
+      rebeccapurple,
+      dodgerblue,
+      green
+    );
+    opacity: 0.75;
+  }
