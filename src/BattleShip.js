@@ -2,6 +2,7 @@ class BattleShip{
     constructor(length){
         this.length=length;
         this.received_hit=0;
+        this.alignment='horizontal';
         this.sunk=false; 
     }
 location=[];
