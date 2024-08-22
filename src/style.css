@@ -5,7 +5,8 @@
 }
 
 .container{
-    background-color: orange;
+    display: flex;
+    gap: 4rem;
 }
 
 body{
@@ -13,7 +14,7 @@ body{
 }
 
 .board{
-    border: 1px solid rgba(0,0,0,0.4);
+    border: 0.1px solid rgba(0,0,0,0.2);
     height: 80vh;
     width: 80vh;
     display: grid;
@@ -22,5 +23,5 @@ body{
 }
 
 .cell{
-    border: 1px solid rgba(0,0,0,0.4); 
+    border: 0.1px solid rgba(0,0,0,0.2); 
 }

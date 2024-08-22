@@ -1,5 +1,16 @@
 
 import './style.css'
-import Board from './Board'
+import Controller from './GameController'
 
-const board = Board();
+const controller= Controller();
+
+controller.init();
+
+
+
+
+
+
+
+
+
