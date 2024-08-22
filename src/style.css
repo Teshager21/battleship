@@ -14,16 +14,25 @@ body{
 }
 
 .board{
-    border: 0.1px solid rgba(0,0,0,0.2);
+    border-top: 0.01px solid rgba(0,0,0,0.2);
+    border-left: 0.01px solid rgba(0,0,0,0.2);
     height: 80vh;
     width: 80vh;
     display: grid;
     grid-template-columns: repeat(10,1fr);
     grid-template-rows: repeat(10,1fr);
+    position: relative;
+}
+
+.ship{
+    position: absolute;
+    border: 3px solid blue;
+    background-color:rgba(10,10,253,0.2) ;
 }
 
 .cell{
-    border: 0.1px solid rgba(0,0,0,0.2); 
+    border-bottom: 0.01px solid rgba(0,0,0,0.2); 
+    border-right:0.01px solid rgba(0,0,0,0.2); 
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -32,8 +41,10 @@ body{
 }
 
 .occupied{
-    background-color:rgba(0,0,0,0.2) ;
+    /* background-color:rgba(0,0,0,0.2) ; */
 }
 .missed{
-    background-color: rgba(253,0,0,0.2);
+    /* background-color: rgba(253,0,0,0.2); */
+    font-size: 1rem;
+    font-weight: bold;
 }

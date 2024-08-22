@@ -30,12 +30,9 @@ const Controller=()=>{
         view.display(gameBoard2,gameBoard1);
     }
     const allocateFire=(location)=>{
-      console.log('allocating',location)
       opponent.gameBoard.receiveAttack(location);
       view.display(currentPlayer.gameBoard,opponent.gameBoard);
-      console.log('before switching',currentPlayer);
      switchTurn(); 
-     console.log('after switching',currentPlayer);
      if(currentPlayer.id===player2.id){
         const row= Math.floor(Math.random()*10)
         const loc = `${(row>=1)?row:''}${Math.floor(Math.random()*10)}`;
