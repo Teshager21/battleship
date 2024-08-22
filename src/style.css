@@ -25,3 +25,7 @@ body{
 .cell{
     border: 0.1px solid rgba(0,0,0,0.2); 
 }
+
+.occupied{
+    background-color:rgba(0,0,0,0.2) ;
+}

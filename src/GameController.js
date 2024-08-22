@@ -13,7 +13,8 @@ const Controller=()=>{
     
     const init=()=>{
         const view=View();
-        view.display();
+        view.display(gameBoard1);
+        console.log(gameBoard1.fleet);
     }
    return {init}
 }
