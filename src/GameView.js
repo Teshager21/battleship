@@ -28,7 +28,13 @@ const View=(gameBoard)=>{
         const missedLocations= gameBoard.missed;  //display missed locations
         for(const cell of missedLocations){
             document.getElementById(cell).classList.add('missed');
-        }  
+        }
+        const hitLocations= gameBoard.hit;  //display missed locations
+        console.log(hitLocations)
+        for(const cell of hitLocations){
+            document.getElementById(cell).textContent='x'
+        }
+       
     }
     return {view,display};
 }
