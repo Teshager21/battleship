@@ -1,4 +1,5 @@
 import Board from './Board'
+import subscription from './EventEmitter';
 
 const View=(gameBoard)=>{
     const view= document.createElement('div');
@@ -10,8 +11,7 @@ const View=(gameBoard)=>{
     board2.addEventListener('click',(e)=>handleFire(e));
 
     const handleFire=(e)=>{
-        console.log(e.target);
-        e.target.textContent= 'x'
+        subscription.subscribe('fire',e.target.getAttribute('id'));
     }
     
     view.append(board1,board2);

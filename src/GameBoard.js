@@ -61,6 +61,8 @@ receiveAttack(location){
     if(this.occupied[location]) {
         this.occupied[location].hit();
         this.hit.push(location);
+        console.log('hit a target');
+        
     }
     else this.missed.push(location);
 
