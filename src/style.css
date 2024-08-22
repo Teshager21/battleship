@@ -24,8 +24,16 @@ body{
 
 .cell{
     border: 0.1px solid rgba(0,0,0,0.2); 
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
 }
 
 .occupied{
     background-color:rgba(0,0,0,0.2) ;
+}
+.missed{
+    background-color: rgba(253,0,0,0.2);
 }

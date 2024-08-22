@@ -6,6 +6,13 @@ const View=(gameBoard)=>{
     
     const board1 = Board();
     const board2=Board();
+
+    board2.addEventListener('click',(e)=>handleFire(e));
+
+    const handleFire=(e)=>{
+        console.log(e.target);
+        e.target.textContent= 'x'
+    }
     
     view.append(board1,board2);
 
@@ -14,15 +21,14 @@ const View=(gameBoard)=>{
         document.body.append(container);
         container.classList.add('container');
         container.append(view);
-        for(const ship of gameBoard.fleet){
-
-            ship.location.map((cellId)=>{
-                // console.log(cellId)
-                document.getElementById(cellId).classList.add('occupied');
-            })
-
+        for(const ship of gameBoard.fleet){ //display ships
+            ship.location.map((cellId)=>document.getElementById(cellId).classList.add('occupied'))
         }
-       
+        // console.log('board',gameBoard.missed)
+        const missedLocations= gameBoard.missed;  //display missed locations
+        for(const cell of missedLocations){
+            document.getElementById(cell).classList.add('missed');
+        }  
     }
     return {view,display};
 }

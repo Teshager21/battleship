@@ -13,8 +13,10 @@ const Controller=()=>{
     
     const init=()=>{
         const view=View();
+        player1.gameBoard.receiveAttack('20');
+        player1.gameBoard.receiveAttack('22');
+        // console.log(gameBoard1.fleet);
         view.display(gameBoard1);
-        console.log(gameBoard1.fleet);
     }
    return {init}
 }
