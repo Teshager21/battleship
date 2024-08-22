@@ -42,10 +42,7 @@ const View=(gameBoard)=>{
             if(cell.classList.contains('occupied')) cell.classList.remove('occupied');
             if(cell.classList.contains('hit')) cell.classList.remove('hit');
         }
-        if(board.querySelector('.ship')) {
-            // const elements=Array.from(board.querySelectorAll('.ship'));
-            board.querySelectorAll('.ship').forEach(ship=>ship.remove());
-        }
+        if(board.querySelector('.ship'))  board.querySelectorAll('.ship').forEach(ship=>ship.remove());
     }
 
     const positionShip=(ship,board)=>{

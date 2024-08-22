@@ -17,8 +17,10 @@ for(let i=1;i<=5;i++){
 placeShips(){
 this.generateShips();
 const canAccomodateShip=(location,ship)=>{
-if(ship.alignment==="horizontal") return parseInt(location)+ship.length-1<100 && parseInt(location)+ship.length-1>0;
-if(ship.alignment==="vertical") return parseInt(location)+10*ship.length-1<100 && parseInt(location)+10*ship.length-1>0;
+if(ship.alignment==="horizontal"){
+     return parseInt(location)+ship.length-1<100 && parseInt(location)+ship.length-1>0 && parseInt((parseInt(location)+ship.length)/10)===parseInt(parseInt(location)/10)
+    }
+if(ship.alignment==="vertical") return parseInt(location)+10*ship.length-1<100 && parseInt(location)+10*ship.length-1>0 && parseInt(location)+ship.length-1>0 && parseInt((parseInt(location)+ship.length)%10)===parseInt(parseInt(location)%10);    
 }
 const isOccupied=(location,ship)=>{
     let occupied= false;
@@ -71,17 +73,3 @@ isFleetSunk(){
 }
 
 }
-
-
-
-
-const gameBoard= new GameBoard();
-gameBoard.placeShips();
-
-
-gameBoard.receiveAttack(Object.keys(gameBoard.occupied)[0])
-// console.log(gameBoard.occupied)
-// console.log('missed',gameBoard.missed)
-// console.log('hit',gameBoard.hit);
-// console.log('values',Object.values(gameBoard.occupied)[0].received_hit
-// );
