@@ -15,8 +15,10 @@ const Controller=()=>{
         const view=View();
         player1.gameBoard.receiveAttack('20');
         player1.gameBoard.receiveAttack('22');
+        player2.gameBoard.receiveAttack('20');
+        player2.gameBoard.receiveAttack('22');
         // console.log(gameBoard1.fleet);
-        view.display(gameBoard1);
+        view.display(gameBoard1,gameBoard2);
     }
    return {init}
 }
